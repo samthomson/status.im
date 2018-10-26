@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -224,21 +224,100 @@
               <div class="article-content" itemprop="articleBody">
                 <p>This tutorial will go step by step through the creation and deployment of a <a href="chat_command.html">chat command</a> allowing to interact with a smart contract.</p>
 <h1 id="Add-meta-data" class="article-heading"><a href="#Add-meta-data" class="headerlink" title="Add meta data"></a>Add meta data<a class="article-anchor" href="#Add-meta-data" aria-hidden="true"></a></h1><p>First step is to create the skeleton extension with some relevant metadata:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;meta</span><br><span class="line"> &#123;<span class="symbol">:name</span>          <span class="string">"DTwitter"</span></span><br><span class="line">  <span class="symbol">:description</span>   <span class="string">"Vote for DTwitts"</span></span><br><span class="line">  <span class="symbol">:documentation</span> <span class="string">""</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{meta
+ {:name          &quot;DTwitter&quot;
+  :description   &quot;Vote for DTwitts&quot;
+  :documentation &quot;&quot;}}
+</code></pre>
 <h1 id="Define-entry-point" class="article-heading"><a href="#Define-entry-point" class="headerlink" title="Define entry point"></a>Define entry point<a class="article-anchor" href="#Define-entry-point" aria-hidden="true"></a></h1><p>In this tutorial a chat command is created: it’s specific id is <code>dtwitter</code> and the generic hook type for a chat command is <code>commands</code>.</p>
 <h1 id="Scope" class="article-heading"><a href="#Scope" class="headerlink" title="Scope"></a>Scope<a class="article-anchor" href="#Scope" aria-hidden="true"></a></h1><p>This chat command will be available for <code>personal-chats</code>.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;hooks/commands.collectible</span><br><span class="line"> &#123;...</span><br><span class="line">  <span class="symbol">:scope</span> #&#123;<span class="symbol">:personal-chats</span>&#125;&#125; <span class="comment">;; Could be #&#123;:personal-chats :group-chats&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{hooks/commands.collectible
+ {...
+  :scope #{:personal-chats}} ;; Could be #{:personal-chats :group-chats}
+</code></pre>
 <h1 id="Parameters" class="article-heading"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters<a class="article-anchor" href="#Parameters" aria-hidden="true"></a></h1><p>The DTwitter chat command has 1 required parameters: the post id, of type text.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;hooks/commands.dtwitter</span><br><span class="line"> &#123;...</span><br><span class="line">  <span class="symbol">:parameters</span>    [&#123;<span class="symbol">:id</span>          <span class="symbol">:id</span></span><br><span class="line">                   <span class="symbol">:type</span>        <span class="symbol">:text</span></span><br><span class="line">                   <span class="symbol">:placeholder</span> <span class="string">"Vote id"</span>&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{hooks/commands.dtwitter
+ {...
+  :parameters    [{:id          :id
+                   :type        :text
+                   :placeholder &quot;Vote id&quot;}]}}
+</code></pre>
 <h1 id="on-send" class="article-heading"><a href="#on-send" class="headerlink" title="on-send"></a>on-send<a class="article-anchor" href="#on-send" aria-hidden="true"></a></h1><p>When executed, the chat command will load the DTwitt details from the contract then IPFS. Those details will be stored in the extension local store.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:on-send</span>       [load-dtwitt]</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">:on-send       [load-dtwitt]
+
+</code></pre>
 <p>The <code>posts(uint256)</code> method is called to retrieve the post details. The encapsulated IPFS hash is then used to retrieve the post content.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> events/put-dtwitt</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;result <span class="symbol">:result</span>&#125; properties]</span><br><span class="line">   [store/put &#123;<span class="symbol">:key</span> <span class="string">"dtwitt"</span> <span class="symbol">:value</span> result&#125;])</span><br><span class="line"> </span><br><span class="line"> events/load-dtwitt</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;id <span class="symbol">:id</span>&#125; <span class="symbol">:params</span>&#125; properties]</span><br><span class="line">   [ethereum/call &#123;<span class="symbol">:to</span> <span class="string">"0x255ee755f4b88350ec6ddea5d193b11634dc7b95"</span> <span class="symbol">:method</span> <span class="string">"posts(uint256)"</span> <span class="symbol">:params</span> [id] <span class="symbol">:on-result</span> [put-dtwitt]&#125;])</span><br><span class="line">̀̀</span><br></pre></td></tr></table></figure>
-<h1 id="Previews" class="article-heading"><a href="#Previews" class="headerlink" title="Previews"></a>Previews<a class="article-anchor" href="#Previews" aria-hidden="true"></a></h1><p>Our short preview definition is a simple text element:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;&#123;id <span class="symbol">:id</span>&#125; <span class="symbol">:params</span>&#125; <span class="symbol">:content</span>&#125; properties]</span><br><span class="line"> [text <span class="string">"Vote for $&#123;id&#125;"</span>])</span><br></pre></td></tr></table></figure>
-<p>Our preview definition displays some details about a dtwitt and allows to upvote it via a button:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;params <span class="symbol">:params</span>&#125; <span class="symbol">:content</span></span><br><span class="line">       outgoing <span class="symbol">:outgoing</span> timestamp-str <span class="symbol">:timestamp-str</span>&#125; properties</span><br><span class="line">      &#123;description <span class="symbol">:description</span>&#125; [store/get &#123;<span class="symbol">:key</span> <span class="string">"dtwitt"</span>&#125;]]</span><br><span class="line">  [view &#123;<span class="symbol">:style</span> &#123;<span class="symbol">:flex-direction</span> <span class="symbol">:column</span></span><br><span class="line">                 <span class="symbol">:align-items</span>    <span class="symbol">:flex-start</span>&#125;&#125;</span><br><span class="line">   [text description]</span><br><span class="line">   [button &#123;<span class="symbol">:on-click</span> [vote-dtwitt]&#125;</span><br><span class="line">    <span class="string">"Upvote"</span>]])</span><br></pre></td></tr></table></figure>
-<h1 id="Full-extension-code" class="article-heading"><a href="#Full-extension-code" class="headerlink" title="Full extension code"></a>Full extension code<a class="article-anchor" href="#Full-extension-code" aria-hidden="true"></a></h1><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&#123;meta &#123;<span class="symbol">:name</span>          <span class="string">"DTwitter"</span></span><br><span class="line">       <span class="symbol">:description</span>   <span class="string">"Access DTwitter posts"</span></span><br><span class="line">       <span class="symbol">:documentation</span> <span class="string">"Commands to interract with DTwitter."</span>&#125;</span><br><span class="line"></span><br><span class="line"> events/vote-dtwitt</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;id <span class="symbol">:id</span>&#125; properties]</span><br><span class="line">   [ethereum/send-transaction &#123;<span class="symbol">:to</span> <span class="string">"0x255ee755f4b88350ec6ddea5d193b11634dc7b95"</span> <span class="symbol">:method</span> <span class="string">"vote(uint256,uint8)"</span> <span class="symbol">:params</span> [id <span class="number">1</span>]&#125;])</span><br><span class="line"> </span><br><span class="line"> views/preview</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;params <span class="symbol">:params</span>&#125; <span class="symbol">:content</span></span><br><span class="line">        outgoing <span class="symbol">:outgoing</span> timestamp-str <span class="symbol">:timestamp-str</span>&#125; properties</span><br><span class="line">       &#123;description <span class="symbol">:description</span>&#125; [store/get &#123;<span class="symbol">:key</span> <span class="string">"dtwitt"</span>&#125;]]</span><br><span class="line">   [view &#123;<span class="symbol">:style</span> &#123;<span class="symbol">:flex-direction</span> <span class="symbol">:column</span></span><br><span class="line">                  <span class="symbol">:align-items</span>    <span class="symbol">:flex-start</span>&#125;&#125;</span><br><span class="line">    [text description]</span><br><span class="line">    [button &#123;<span class="symbol">:on-click</span> [vote-dtwitt]&#125;</span><br><span class="line">     <span class="string">"Upvote"</span>]])</span><br><span class="line"></span><br><span class="line"> views/short-preview</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;&#123;id <span class="symbol">:id</span>&#125; <span class="symbol">:params</span>&#125; <span class="symbol">:content</span>&#125; properties]</span><br><span class="line">  [text <span class="string">"Vote for $&#123;id&#125;"</span>])</span><br><span class="line"> </span><br><span class="line"> events/put-dtwitt</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;result <span class="symbol">:result</span>&#125; properties]</span><br><span class="line">   [store/put &#123;<span class="symbol">:key</span> <span class="string">"dtwitt"</span> <span class="symbol">:value</span> result&#125;])</span><br><span class="line"> </span><br><span class="line"> events/load-dtwitt</span><br><span class="line"> (<span class="name"><span class="builtin-name">let</span></span> [&#123;&#123;id <span class="symbol">:id</span>&#125; <span class="symbol">:params</span>&#125; properties]</span><br><span class="line">   [ethereum/call &#123;<span class="symbol">:to</span> <span class="string">"0x255ee755f4b88350ec6ddea5d193b11634dc7b95"</span> <span class="symbol">:method</span> <span class="string">"posts(uint256)"</span> <span class="symbol">:params</span> [id] <span class="symbol">:on-result</span> [put-dtwitt]&#125;])</span><br><span class="line"> </span><br><span class="line"> hooks/commands.dtwitter</span><br><span class="line"> &#123;<span class="symbol">:description</span>   <span class="string">"DTwitter vote"</span></span><br><span class="line">  <span class="symbol">:scope</span>         #&#123;<span class="symbol">:personal-chats</span>&#125;</span><br><span class="line">  <span class="symbol">:preview</span>       [preview]</span><br><span class="line">  <span class="symbol">:short-preview</span> [short-preview]</span><br><span class="line">  <span class="symbol">:on-send</span>       [load-dtwitt]</span><br><span class="line">  <span class="symbol">:parameters</span>    [&#123;<span class="symbol">:id</span>          <span class="symbol">:id</span></span><br><span class="line">                   <span class="symbol">:type</span>        <span class="symbol">:text</span></span><br><span class="line">                   <span class="symbol">:placeholder</span> <span class="string">"Vote id"</span>&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure"> events/put-dtwitt
+ (let [{result :result} properties]
+   [store/put {:key &quot;dtwitt&quot; :value result}])
+
+ events/load-dtwitt
+ (let [{{id :id} :params} properties]
+   [ethereum/call {:to "0x255ee755f4b88350ec6ddea5d193b11634dc7b95" :method "posts(uint256)" :params [id] :on-result [put-dtwitt]}])
+̀̀```
+
+# Previews 
+
+Our short preview definition is a simple text element:
+
+```clojure
+ (let [{{{id :id} :params} :content} properties]
+  [text "Vote for ${id}"])
+```
+
+Our preview definition displays some details about a dtwitt and allows to upvote it via a button:
+
+```clojure
+ (let [{{params :params} :content
+        outgoing :outgoing timestamp-str :timestamp-str} properties
+       {description :description} [store/get {:key "dtwitt"}]]
+   [view {:style {:flex-direction :column
+                  :align-items    :flex-start}}
+    [text description]
+    [button {:on-click [vote-dtwitt]}
+     &quot;Upvote&quot;]])
+</code></pre>
+<h1 id="Full-extension-code" class="article-heading"><a href="#Full-extension-code" class="headerlink" title="Full extension code"></a>Full extension code<a class="article-anchor" href="#Full-extension-code" aria-hidden="true"></a></h1><pre><code class="clojure">{meta {:name          &quot;DTwitter&quot;
+       :description   &quot;Access DTwitter posts&quot;
+       :documentation &quot;Commands to interract with DTwitter.&quot;}
+
+ events/vote-dtwitt
+ (let [{id :id} properties]
+   [ethereum/send-transaction {:to &quot;0x255ee755f4b88350ec6ddea5d193b11634dc7b95&quot; :method &quot;vote(uint256,uint8)&quot; :params [id 1]}])
+
+ views/preview
+ (let [{{params :params} :content
+        outgoing :outgoing timestamp-str :timestamp-str} properties
+       {description :description} [store/get {:key "dtwitt"}]]
+   [view {:style {:flex-direction :column
+                  :align-items    :flex-start}}
+    [text description]
+    [button {:on-click [vote-dtwitt]}
+     &quot;Upvote&quot;]])
+
+ views/short-preview
+ (let [{{{id :id} :params} :content} properties]
+  [text "Vote for ${id}"])
+ 
+ events/put-dtwitt
+ (let [{result :result} properties]
+   [store/put {:key "dtwitt" :value result}])
+ 
+ events/load-dtwitt
+ (let [{{id :id} :params} properties]
+   [ethereum/call {:to "0x255ee755f4b88350ec6ddea5d193b11634dc7b95" :method "posts(uint256)" :params [id] :on-result [put-dtwitt]}])
+ 
+ hooks/commands.dtwitter
+ {:description   "DTwitter vote"
+  :scope         #{:personal-chats}
+  :preview       [preview]
+  :short-preview [short-preview]
+  :on-send       [load-dtwitt]
+  :parameters    [{:id          :id
+                   :type        :text
+                   :placeholder "Vote id"}]}}
+</code></pre>
+
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="2018-10-25T19:33:51.252Z" itemprop="dateModified">Last updated: 2018-10-25</time>

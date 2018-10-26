@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -235,10 +235,13 @@
 <li>Go version 1.10;</li>
 <li>Docker (only if cross-compiling).</li>
 </ul>
-<h3 id="2-Clone-the-repository" class="article-heading"><a href="#2-Clone-the-repository" class="headerlink" title="2. Clone the repository"></a>2. Clone the repository<a class="article-anchor" href="#2-Clone-the-repository" aria-hidden="true"></a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/status-im/status-go</span><br><span class="line">cd status-go</span><br></pre></td></tr></table></figure>
+<h3 id="2-Clone-the-repository" class="article-heading"><a href="#2-Clone-the-repository" class="headerlink" title="2. Clone the repository"></a>2. Clone the repository<a class="article-anchor" href="#2-Clone-the-repository" aria-hidden="true"></a></h3><pre><code class="shell">git clone https://github.com/status-im/status-go
+cd status-go
+</code></pre>
 <h3 id="3-Set-up-build-environment" class="article-heading"><a href="#3-Set-up-build-environment" class="headerlink" title="3. Set up build environment"></a>3. Set up build environment<a class="article-anchor" href="#3-Set-up-build-environment" aria-hidden="true"></a></h3><p>status-go uses Makefile to perform the most common actions. See <code>make help</code> output for available commands.</p>
 <p>The first thing to do to get started is to run <code>make setup</code>. That’ll ensure that all tools required to do a first build are installed and set up.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make setup</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make setup
+</code></pre>
 <p>This script prepares and installs the following:</p>
 <ul>
 <li><a href="github.com/golang/mock/mockgen">mockgen</a></li>
@@ -247,25 +250,47 @@
 <li><a href="https://github.com/protocolbuffers/protobuf" target="_blank" rel="noopener">protobuf compiler</a></li>
 </ul>
 <h3 id="4-Build-the-statusd-CLI" class="article-heading"><a href="#4-Build-the-statusd-CLI" class="headerlink" title="4. Build the statusd CLI"></a>4. Build the statusd CLI<a class="article-anchor" href="#4-Build-the-statusd-CLI" aria-hidden="true"></a></h3><p>To get started, let’s build the Ethereum node Command Line Interface tool, called <code>statusd</code>.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make statusgo</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make statusgo
+</code></pre>
 <p>Once that is completed, you can run it straight away with a default configuration by running</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">build/bin/statusd</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">build/bin/statusd
+</code></pre>
 <h3 id="Node-configuration" class="article-heading"><a href="#Node-configuration" class="headerlink" title="Node configuration"></a>Node configuration<a class="article-anchor" href="#Node-configuration" aria-hidden="true"></a></h3><p>Passing the <code>-h</code> flag will output all the possible flags used to configure the tool. Although the tool can be used with default configuration, you’ll probably want to delve into the configuration and modify it to your needs.</p>
 <p>Node configuration - be it through the CLI or as a static library - is done through JSON files following a precise structure. At any point, you can add the <code>-version</code> argument to <code>statusd</code> to get an output of the JSON configuration in use. You can pass multiple configuration files which will be applied in the order in which they were specified.</p>
 <p>There are a few standard configuration files located in the <a href="https://github.com/status-im/status-go/blob/develop/config/cli" target="_blank" rel="noopener">config/cli</a> folder to get you started. For instance you can pass <code>-c les-enabled.json</code> to enable LES mode.</p>
 <h4 id="Typical-modes-to-run-a-node" class="article-heading"><a href="#Typical-modes-to-run-a-node" class="headerlink" title="Typical modes to run a node"></a>Typical modes to run a node<a class="article-anchor" href="#Typical-modes-to-run-a-node" aria-hidden="true"></a></h4><ul>
 <li>As a Whisper mail server:</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"WhisperConfig"</span>: &#123;</span><br><span class="line">        <span class="string">"Enabled"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"EnableMailServer"</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Set LightClient to true if the node should start with an empty bloom filter and not forward messages from other nodes</span></span><br><span class="line">        <span class="string">"LightClient"</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Set either a password or an asymmetric encryption key (hex encoded) to use to decrypt incoming Whisper requests</span></span><br><span class="line">        <span class="string">"MailServerPassword"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"MailServerAsymKey"</span>: <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">{
+    &quot;WhisperConfig&quot;: {
+        &quot;Enabled&quot;: true,
+        &quot;EnableMailServer&quot;: true,
+
+        // Set LightClient to true if the node should start with an empty bloom filter and not forward messages from other nodes
+        &quot;LightClient&quot;: false,
+
+        // Set either a password or an asymmetric encryption key (hex encoded) to use to decrypt incoming Whisper requests
+        &quot;MailServerPassword&quot;: &quot;&quot;,
+        &quot;MailServerAsymKey&quot;: &quot;&quot;
+    }
+}
+</code></pre>
 <ul>
 <li>As a LES node:</li>
 </ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"LightEthConfig"</span>: &#123;</span><br><span class="line">        <span class="attr">"Enabled"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-Build-a-static-library" class="article-heading"><a href="#5-Build-a-static-library" class="headerlink" title="5. Build a static library"></a>5. Build a static library<a class="article-anchor" href="#5-Build-a-static-library" aria-hidden="true"></a></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make statusgo-library</span><br></pre></td></tr></table></figure>
+<pre><code class="json">{
+    &quot;LightEthConfig&quot;: {
+        &quot;Enabled&quot;: true
+    }
+}
+</code></pre>
+<h3 id="5-Build-a-static-library" class="article-heading"><a href="#5-Build-a-static-library" class="headerlink" title="5. Build a static library"></a>5. Build a static library<a class="article-anchor" href="#5-Build-a-static-library" aria-hidden="true"></a></h3><pre><code class="shell">make statusgo-library
+</code></pre>
 <p>This command will build a status-go library for the host platform under <code>build/bin/libstatus.a</code>. You can also cross compile for different platforms using the appropriate <code>make</code> commands, e.g. <code>make statusgo-android</code>, <code>make statusgo-linux</code>, etc. These will be built in a Docker container using <code>xgo</code>.</p>
 <h3 id="6-Build-a-bootnode" class="article-heading"><a href="#6-Build-a-bootnode" class="headerlink" title="6. Build a bootnode"></a>6. Build a bootnode<a class="article-anchor" href="#6-Build-a-bootnode" aria-hidden="true"></a></h3><p>A bootnode is a regular Ethereum node which runs only discovery (DevP2P is disabled). It is used as a first connection point for Ethereum nodes to discover other peers in the network.</p>
 <p>One reason you might want to run a bootnode build instead of a node with LES/Whisper enabled, is that it will be more forgiving in terms of version mismatches, as discovery happens on a different layer.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make bootnode</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make bootnode
+</code></pre>
 <p>The output program will be available in <code>build/bin/bootnode</code>.</p>
 <h2 id="Debugging" class="article-heading"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging<a class="article-anchor" href="#Debugging" aria-hidden="true"></a></h2><h3 id="IDE-Debugging" class="article-heading"><a href="#IDE-Debugging" class="headerlink" title="IDE Debugging"></a>IDE Debugging<a class="article-anchor" href="#IDE-Debugging" aria-hidden="true"></a></h3><p>If you’re using Visual Studio Code, you can rename the <a href="https://github.com/status-im/status-go/blob/develop/.vscode/launch.example.json" target="_blank" rel="noopener">.vscode/launch.example.json</a> file to <code>.vscode/launch.json</code> so that you can run the <code>statusd</code> server with the debugger attached.</p>
 <h3 id="Android-debugging" class="article-heading"><a href="#Android-debugging" class="headerlink" title="Android debugging"></a>Android debugging<a class="article-anchor" href="#Android-debugging" aria-hidden="true"></a></h3><p>In order to see the log files while debugging on an Android device, do the following:</p>
@@ -274,17 +299,22 @@
 <li>Connect a USB cable to your phone and make sure you can use <code>adb</code>.</li>
 </ul>
 <p>Run</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell tail -f sdcard/Download/geth.log</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">adb shell tail -f sdcard/Download/geth.log
+</code></pre>
 <h2 id="Testing" class="article-heading"><a href="#Testing" class="headerlink" title="Testing"></a>Testing<a class="article-anchor" href="#Testing" aria-hidden="true"></a></h2><p>To setup accounts passphrase you need to setup an environment variable: <code>export ACCOUNT_PASSWORD=&quot;secret_pass_phrase&quot;</code>.</p>
 <p>To test fully status-go, use:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make ci</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make ci
+</code></pre>
 <p>To test statusgo using a given network by name, use:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make ci networkid=rinkeby</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make ci networkid=rinkeby
+</code></pre>
 <p>To test statusgo using a given network by number ID, use:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make ci networkid=3</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">make ci networkid=3
+</code></pre>
 <p>If you have problems running tests on public network we suggest reading <a href="https://github.com/status-im/status-go/blob/develop/t/e2e/README.md" target="_blank" rel="noopener">e2e guide</a>.</p>
 <p>If you want to launch specific test, for instance <code>RPCSendTransactions</code>, use the following command:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go test -v ./api/ -testify.m ^RPCSendTransaction$</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">go test -v ./api/ -testify.m ^RPCSendTransaction$
+</code></pre>
 <p>Note <code>-testify.m</code> as <a href="https://godoc.org/github.com/stretchr/testify/suite" target="_blank" rel="noopener">testify/suite</a> is used to group individual tests.</p>
 
               </div>

@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -224,9 +224,24 @@
               <div class="article-content" itemprop="articleBody">
                 <h1 id="Extensions-Query" class="article-heading"><a href="#Extensions-Query" class="headerlink" title="Extensions Query"></a>Extensions Query<a class="article-anchor" href="#Extensions-Query" aria-hidden="true"></a></h1><p>Queries are exposed by the platform in the form of <code>:queries</code> key in the capacities map.<br>Only those queries which are exposed can be either referenced by hook property (when the property is of the type <code>:query</code>),<br>or used to read data in let block in view .</p>
 <h2 id="Query-as-hook-property" class="article-heading"><a href="#Query-as-hook-property" class="headerlink" title="Query as hook property"></a>Query as hook property<a class="article-anchor" href="#Query-as-hook-property" aria-hidden="true"></a></h2><p>To refer to some query via hook property (might be required for some host app hooks), the property must be defined as <code>:query</code> type<br>by the app-hook and extension must correctly refer to query from capacities map.</p>
-<h3 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; Capacities map in the host application</span></span><br><span class="line">&#123;<span class="symbol">:capacities</span> &#123;<span class="symbol">:queries</span> &#123;'network-up ...&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Extension hook data</span></span><br><span class="line">hooks/wallet-asset.next-coin</span><br><span class="line">&#123;<span class="symbol">:able-to-send</span> [network-up]&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h3><pre><code class="clojure">;; Capacities map in the host application
+{:capacities {:queries {&#39;network-up ...}}}
+
+;; Extension hook data
+hooks/wallet-asset.next-coin
+{:able-to-send [network-up]}
+</code></pre>
 <h2 id="Queries-in-views" class="article-heading"><a href="#Queries-in-views" class="headerlink" title="Queries in views"></a>Queries in views<a class="article-anchor" href="#Queries-in-views" aria-hidden="true"></a></h2><p>To use some queries in extension defined view, the query must be exposed via capacities map of the host platform.</p>
-<h2 id="Example-1" class="article-heading"><a href="#Example-1" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-1" aria-hidden="true"></a></h2><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;; Capacities map in the host application</span></span><br><span class="line">&#123;<span class="symbol">:capacities</span> &#123;<span class="symbol">:queries</span> &#123;'store/get ...&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Extension view data</span></span><br><span class="line">views/coin-item</span><br><span class="line">[view &#123;&#125;</span><br><span class="line">  (<span class="name"><span class="builtin-name">let</span></span> [current-network [store/get &#123;<span class="symbol">:networks</span> <span class="symbol">:current</span>&#125;]]</span><br><span class="line">    [text &#123;&#125; <span class="string">"Current network: "</span>]</span><br><span class="line">      [text &#123;&#125; current-network]])</span><br></pre></td></tr></table></figure>
+<h2 id="Example-1" class="article-heading"><a href="#Example-1" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example-1" aria-hidden="true"></a></h2><pre><code class="clojure">;; Capacities map in the host application
+{:capacities {:queries {&#39;store/get ...}}}
+
+;; Extension view data
+views/coin-item
+[view {}
+  (let [current-network [store/get {:networks :current}]]
+    [text {} &quot;Current network: &quot;]
+      [text {} current-network]])
+</code></pre>
 
               </div>
               <footer class="article-footer">

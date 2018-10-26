@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -227,10 +227,26 @@
 <h4 id="JavaScript-API-methods" class="article-heading"><a href="#JavaScript-API-methods" class="headerlink" title="JavaScript API methods"></a>JavaScript API methods<a class="article-anchor" href="#JavaScript-API-methods" aria-hidden="true"></a></h4><ul>
 <li><code>getContactCode</code> provides access to a user’s Whisper ID, which can be used to initiate chats or add a contact.</li>
 </ul>
-<h4 id="Example-implementation" class="article-heading"><a href="#Example-implementation" class="headerlink" title="Example implementation"></a>Example implementation<a class="article-anchor" href="#Example-implementation" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.web3.currentProvider.status</span><br><span class="line"> .getContactCode()</span><br><span class="line"> .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Contact code:'</span>, data)</span><br><span class="line"> &#125;)</span><br><span class="line"> .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Error:'</span>, err)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Example-implementation" class="article-heading"><a href="#Example-implementation" class="headerlink" title="Example implementation"></a>Example implementation<a class="article-anchor" href="#Example-implementation" aria-hidden="true"></a></h4><pre><code class="JavaScript">window.web3.currentProvider.status
+ .getContactCode()
+ .then(data =&gt; {
+   console.log(&#39;Contact code:&#39;, data)
+ })
+ .catch(err =&gt; {
+   console.log(&#39;Error:&#39;, err)
+ })
+</code></pre>
 <h2 id="Other-APIs" class="article-heading"><a href="#Other-APIs" class="headerlink" title="Other APIs"></a>Other APIs<a class="article-anchor" href="#Other-APIs" aria-hidden="true"></a></h2><p>Status also implements a number of APIs standardized by EIPs.</p>
 <h3 id="ERC945" class="article-heading"><a href="#ERC945" class="headerlink" title="ERC945"></a>ERC945<a class="article-anchor" href="#ERC945" aria-hidden="true"></a></h3><p><a href="QR Code Scanning API">https://github.com/ethereum/EIPs/issues/945</a> allows DApp developpers to trigger a native generic QR code scanner.</p>
-<h4 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.web3.currentProvider</span><br><span class="line"> .scanQRCode()</span><br><span class="line"> .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'QR Scanned:'</span>, data)</span><br><span class="line"> &#125;)</span><br><span class="line"> .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Error:'</span>, err)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="Example" class="article-heading"><a href="#Example" class="headerlink" title="Example"></a>Example<a class="article-anchor" href="#Example" aria-hidden="true"></a></h4><pre><code class="JavaScript">window.web3.currentProvider
+ .scanQRCode()
+ .then(data =&gt; {
+   console.log(&#39;QR Scanned:&#39;, data)
+ })
+ .catch(err =&gt; {
+   console.log(&#39;Error:&#39;, err)
+ })
+</code></pre>
 
               </div>
               <footer class="article-footer">

@@ -146,10 +146,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -164,23 +164,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -237,30 +237,23 @@
 <div id="content-wrap">
   <div id="content" class="wrapper">
     <div id="content-inner">
-      <aside id="sidebar" role="navigation">
-  <div class="inner">
-    <strong class="sidebar-title">Status Fiddle</strong><a href="index.html" class="sidebar-link current">Fiddle to Your Heart's Content</a><a href="fiddle.html" class="sidebar-link">Fiddle</a>
-  </div>
-</aside>
-      <article class="article-container" itemscope="" itemtype="http://schema.org/Article">
-        <div class="article-inner">
-          <div class="article">
-            <div class="inner">
-              <div class="article-content" itemprop="articleBody">
-                <h1 id="Fiddle-to-Your-Heart’s-Content" class="article-heading"><a href="#Fiddle-to-Your-Heart’s-Content" class="headerlink" title="Fiddle to Your Heart’s Content"></a>Fiddle to Your Heart’s Content<a class="article-anchor" href="#Fiddle-to-Your-Heart’s-Content" aria-hidden="true"></a></h1><p>Andrey to blow minds here.</p>
-
-              </div>
-              <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-10-25T19:33:51.252Z" itemprop="dateModified">Last updated: 2018-10-25</time>
-                <a href="fiddle.html" class="article-footer-next" title="Fiddle"><span>Next</span><i class="fa fa-chevron-right"></i></a>
-              </footer>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
+      <div class="fiddle">
+        <div id="app"></div>
+      </div>
+      <div class="fiddle-mobile">
+        <h2>Please use our Fiddle on your iPad or desktop!</h2>
+      </div>
+      </div>
   </div>
 </div>
+
+<!-- Fiddle -->
+<script src="/js/fiddle/lib/codemirror.js"></script>
+<script src="/js/fiddle/lib/clojure.js"></script>
+<script src="/js/fiddle/lib/parinfer.js"></script>
+<script src="/js/fiddle/lib/parinfer-codemirror.js"></script>
+<script src="/js/fiddle/js/compiled/app.js"></script>
+<script>status_fiddle.core.init();</script>
     
             <div class="footer footer--global">
         <div class="footer-inner">

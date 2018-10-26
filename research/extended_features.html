@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -270,8 +270,11 @@
 <h2 id="Messages" class="article-heading"><a href="#Messages" class="headerlink" title="Messages"></a>Messages<a class="article-anchor" href="#Messages" aria-hidden="true"></a></h2><p>A message is formed as the concatenation of a single byte for flags, followed by any additional data (as stipulated by the flags) and finally the actual payload (i.e. message). This series of bytes is what forms the data item of the envelope and is always encrypted.</p>
 <p>In the present protocol version, no explicit authentication token is given to indicate that the data field is encrypted; any would-be readers of the message must know ahead of time, through the choice of topic that they have specifically filtered for, that the message is encrypted with a particular key. This is likely to be altered to include a MAC.</p>
 <p>Any determination that the message is indeed from a particular sender is left for a higher-level to address. This is achieved through the Javascript API, which allows the <code>_to</code> parameter to be passed only at the point of specifying the filter. <strong>Since the signature is a part of the message</strong> and not outside the envelope, those unable to decrypt the message data are also unable to access any signature. Any message is therefore constructed as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. flags: 1 byte</span><br><span class="line">2. (signature: 65 bytes)</span><br><span class="line">3. auxiliary field: up to 4 bytes</span><br><span class="line">4. payload: not fixed</span><br></pre></td></tr></table></figure>
-<p>The first 2 bits of the <code>flags</code> field specifies the size of the auxiliary field and the third bit indicates whether a signature is present. A message is invalid if bit <code>2</code> is set but the total data is less than 66 bytes (since this wouldn’t allow it to contain a signature).</p>
+<pre><code>1. flags: 1 byte
+2. (signature: 65 bytes)
+3. auxiliary field: up to 4 bytes
+4. payload: not fixed
+</code></pre><p>The first 2 bits of the <code>flags</code> field specifies the size of the auxiliary field and the third bit indicates whether a signature is present. A message is invalid if bit <code>2</code> is set but the total data is less than 66 bytes (since this wouldn’t allow it to contain a signature).</p>
 <p><strong>Encrypting</strong></p>
 <p>All messages are encrypted. Asymmetric encryption uses the standard Elliptic Curve Integrated Encryption Scheme with a <code>SECP-256k1</code> public key. Symmetric encryption uses <code>AES GCM</code> algorithm with random 96-bit nonce.</p>
 <p>Payloads are encrypted in one of two ways. If the message has a specific recipient, then it is encrypted using <code>ECIES</code> with the specific recipient’s <code>SECP-256k1</code> public key. If the message has no recipient, then we use <code>AES-256</code> with a randomly generated key. This key is then <code>XORed</code> with each of the full topics to form a salted topic. Each salted topic is stored prior to the encrypted data in the same order as the corresponding topics are in the envelope header.</p>
@@ -287,13 +290,20 @@
 <p>This gets technical, so buckle in. The Bloom filter is used to identify a number of topics I may be interested in to my peers without compromising (too much) my privacy over precisely what topics interest me. Precise control over the information content (and thus efficiency of the filter) may be maintained through the addition of bits and is something that can be implemented client side, i.e. by the user.</p>
 <p>Bloom filters are formed by the bitwise <code>OR</code> operation on a number of bloomed topics. The bloom function takes the topic and projects them onto a 512-bit slice. At most, three bits are marked for each bloomed topic.</p>
 <p>The projection function is defined as a mapping from a 4-byte slice <code>S</code> to a 512-bit slice <code>D</code>; for ease of explanation, <code>S</code> will dereference to bytes, whereas <code>D</code> will dereference to bits.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LET D[*] = 0</span><br><span class="line">FOREACH i IN &#123; 0, 1, 2 &#125; DO</span><br><span class="line">LET n = S[i]</span><br><span class="line">IF S[3] &amp; (2 ** i) THEN n += 256</span><br><span class="line">D[n] = 1</span><br><span class="line">END FOR</span><br></pre></td></tr></table></figure>
-<p>Further information can be found in <a href="https://eips.ethereum.org/EIPS/eip-627" target="_blank" rel="noopener">EIP 627</a>.</p>
+<pre><code>LET D[*] = 0
+FOREACH i IN { 0, 1, 2 } DO
+LET n = S[i]
+IF S[3] &amp; (2 ** i) THEN n += 256
+D[n] = 1
+END FOR
+</code></pre><p>Further information can be found in <a href="https://eips.ethereum.org/EIPS/eip-627" target="_blank" rel="noopener">EIP 627</a>.</p>
 <h2 id="PoW-Actual-Calculation" class="article-heading"><a href="#PoW-Actual-Calculation" class="headerlink" title="PoW Actual Calculation"></a>PoW Actual Calculation<a class="article-anchor" href="#PoW-Actual-Calculation" aria-hidden="true"></a></h2><p>The Proof of Work for Whisper envelope is defined as the average number of iterations required to find the current BestBit (the number of leading zero bits in the hash), divided by message size and <code>ttl</code>:</p>
 <p><code>PoW = (2**BestBit) / (size * TTL)</code></p>
 <p>PoW calculation:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fn short_rlp(envelope) = rlp of envelope, excluding nonce field.</span><br><span class="line">fn pow_hash(envelope, nonce) = sha3(short_rlp(envelope) ++ nonce)</span><br><span class="line">fn pow(pow_hash, size, ttl) = 2**leading_zeros(pow_hash) / (size * ttl)</span><br></pre></td></tr></table></figure>
-<p>where <code>size</code> is the size of the full RLP-encoded envelope.</p>
+<pre><code>fn short_rlp(envelope) = rlp of envelope, excluding nonce field.
+fn pow_hash(envelope, nonce) = sha3(short_rlp(envelope) ++ nonce)
+fn pow(pow_hash, size, ttl) = 2**leading_zeros(pow_hash) / (size * ttl)
+</code></pre><p>where <code>size</code> is the size of the full RLP-encoded envelope.</p>
 <h2 id="What-Does-It-All-Mean" class="article-heading"><a href="#What-Does-It-All-Mean" class="headerlink" title="What Does It All Mean?"></a>What Does It All Mean?<a class="article-anchor" href="#What-Does-It-All-Mean" aria-hidden="true"></a></h2><p>All the above features combine into a <strong><code>dark</code></strong> system: i.e. one that is uncompromising when it comes to information leakage from metadata. In its most secure mode of operation, Whisper can (at a considerable cost of bandwidth and latency) deliver 100% dark operation. Even better, this applies not only for metadata collection from inter-peer conduits (i.e. backbone dragnet devices), but even against a much more arduous <code>100% - 2 attack</code>; i.e. <strong>where every node in the network is compromised</strong> (though functional) save a pair running ÐApps for people that wanted to communicate without anybody else knowing.</p>
 <p>:mind_blown:</p>
 

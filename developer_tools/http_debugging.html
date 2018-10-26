@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -231,31 +231,71 @@
 <li>The content type for both requests and responses is always <code>application/json</code>.</li>
 </ul>
 <h1 id="API-description" class="article-heading"><a href="#API-description" class="headerlink" title="API description"></a>API description<a class="article-anchor" href="#API-description" aria-hidden="true"></a></h1><h2 id="POST-ping" class="article-heading"><a href="#POST-ping" class="headerlink" title="POST /ping"></a>POST /ping<a class="article-anchor" href="#POST-ping" aria-hidden="true"></a></h2><p>Simply pings the device.</p>
-<p>Request:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http -v POST localhost:5561/ping</span><br></pre></td></tr></table></figure></p>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Pong!&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="POST-dapp-open" class="article-heading"><a href="#POST-dapp-open" class="headerlink" title="POST /dapp/open"></a>POST /dapp/open<a class="article-anchor" href="#POST-dapp-open" aria-hidden="true"></a></h2><p>Opens a DApp with a specified <code>url</code></p>
-<p>Request:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http -v --json POST localhost:5561/dapp/open url=&lt;dapp_url&gt;</span><br></pre></td></tr></table></figure></p>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;URL has been opened.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="POST-network" class="article-heading"><a href="#POST-network" class="headerlink" title="POST /network"></a>POST /network<a class="article-anchor" href="#POST-network" aria-hidden="true"></a></h2><p>Adds a new network to the list of networks.<br>Expects 4 fields:</p>
+<p>Request:</p>
+<pre><code>http -v POST localhost:5561/ping
+</code></pre><p>Response:</p>
+<pre><code>HTTP/1.1 200 OK
+{
+    &quot;message&quot;: &quot;Pong!&quot;
+}
+</code></pre><h2 id="POST-dapp-open" class="article-heading"><a href="#POST-dapp-open" class="headerlink" title="POST /dapp/open"></a>POST /dapp/open<a class="article-anchor" href="#POST-dapp-open" aria-hidden="true"></a></h2><p>Opens a DApp with a specified <code>url</code></p>
+<p>Request:</p>
+<pre><code>http -v --json POST localhost:5561/dapp/open url=&lt;dapp_url&gt;
+</code></pre><p>Response:</p>
+<pre><code>HTTP/1.1 200 OK
+{
+    &quot;message&quot;: &quot;URL has been opened.&quot;
+}
+</code></pre><h2 id="POST-network" class="article-heading"><a href="#POST-network" class="headerlink" title="POST /network"></a>POST /network<a class="article-anchor" href="#POST-network" aria-hidden="true"></a></h2><p>Adds a new network to the list of networks.<br>Expects 4 fields:</p>
 <ul>
 <li><code>name</code> — the name of your network;</li>
 <li><code>url</code> — the url of it;</li>
 <li><code>chain</code> — type of network (theoretically, can be any name);</li>
 <li><code>network-id</code> — id of the network (<a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md#list-of-chain-ids)" target="_blank" rel="noopener">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md#list-of-chain-ids)</a>.</li>
 </ul>
-<p>Request:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http -v --json POST localhost:5561/network name=AnyNetworkName url=http://localhost:3000 chain=mainnet network-id=2</span><br></pre></td></tr></table></figure></p>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Network has been added.&quot;,</span><br><span class="line">    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 400 Bad Request</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Please, check the validity of network information.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="POST-network-connect" class="article-heading"><a href="#POST-network-connect" class="headerlink" title="POST /network/connect"></a>POST /network/connect<a class="article-anchor" href="#POST-network-connect" aria-hidden="true"></a></h2><p>Switches to a network with a specified <code>id</code>. The network should be created first!</p>
-<p>Request:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http -v --json POST localhost:5561/network/connect id=1535660846036b3c3241022ec5046af53cdb769dcc216</span><br></pre></td></tr></table></figure></p>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Network has been connected.&quot;,</span><br><span class="line">    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 400 Bad Request</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;The network id you provided doesn&apos;t exist.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="DELETE-network" class="article-heading"><a href="#DELETE-network" class="headerlink" title="DELETE /network"></a>DELETE /network<a class="article-anchor" href="#DELETE-network" aria-hidden="true"></a></h2><p>Deletes a network with a specified <code>id</code>. <code>400 Bad Request</code> can be returned if the network doesn’t existed or when it’s a current one.</p>
-<p>Request:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http -v --json DELETE localhost:5561/network id=1535660846036b3c3241022ec5046af53cdb769dcc216</span><br></pre></td></tr></table></figure></p>
-<p>Response:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Network has been deleted.&quot;,</span><br><span class="line">    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 400 Bad Request</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Cannot delete the provided network.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Not-found" class="article-heading"><a href="#Not-found" class="headerlink" title="Not found"></a>Not found<a class="article-anchor" href="#Not-found" aria-hidden="true"></a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 404 Not Found</span><br><span class="line">&#123;</span><br><span class="line">    &quot;message&quot;: &quot;Not found (&lt;method&gt; &lt;url&gt;)&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>Request:</p>
+<pre><code>http -v --json POST localhost:5561/network name=AnyNetworkName url=http://localhost:3000 chain=mainnet network-id=2
+</code></pre><p>Response:</p>
+<pre><code>HTTP/1.1 200 OK
+{
+    &quot;message&quot;: &quot;Network has been added.&quot;,
+    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;
+}
+</code></pre><pre><code>HTTP/1.1 400 Bad Request
+{
+    &quot;message&quot;: &quot;Please, check the validity of network information.&quot;
+}
+</code></pre><h2 id="POST-network-connect" class="article-heading"><a href="#POST-network-connect" class="headerlink" title="POST /network/connect"></a>POST /network/connect<a class="article-anchor" href="#POST-network-connect" aria-hidden="true"></a></h2><p>Switches to a network with a specified <code>id</code>. The network should be created first!</p>
+<p>Request:</p>
+<pre><code>http -v --json POST localhost:5561/network/connect id=1535660846036b3c3241022ec5046af53cdb769dcc216
+</code></pre><p>Response:</p>
+<pre><code>HTTP/1.1 200 OK
+{
+    &quot;message&quot;: &quot;Network has been connected.&quot;,
+    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;
+}
+</code></pre><pre><code>HTTP/1.1 400 Bad Request
+{
+    &quot;message&quot;: &quot;The network id you provided doesn&#39;t exist.&quot;
+}
+</code></pre><h2 id="DELETE-network" class="article-heading"><a href="#DELETE-network" class="headerlink" title="DELETE /network"></a>DELETE /network<a class="article-anchor" href="#DELETE-network" aria-hidden="true"></a></h2><p>Deletes a network with a specified <code>id</code>. <code>400 Bad Request</code> can be returned if the network doesn’t existed or when it’s a current one.</p>
+<p>Request:</p>
+<pre><code>http -v --json DELETE localhost:5561/network id=1535660846036b3c3241022ec5046af53cdb769dcc216
+</code></pre><p>Response:</p>
+<pre><code>HTTP/1.1 200 OK
+{
+    &quot;message&quot;: &quot;Network has been deleted.&quot;,
+    &quot;network-id&quot;: &quot;1535660846036b3c3241022ec5046af53cdb769dcc216&quot;
+}
+</code></pre><pre><code>HTTP/1.1 400 Bad Request
+{
+    &quot;message&quot;: &quot;Cannot delete the provided network.&quot;
+}
+</code></pre><h2 id="Not-found" class="article-heading"><a href="#Not-found" class="headerlink" title="Not found"></a>Not found<a class="article-anchor" href="#Not-found" aria-hidden="true"></a></h2><pre><code>HTTP/1.1 404 Not Found
+{
+    &quot;message&quot;: &quot;Not found (&lt;method&gt; &lt;url&gt;)&quot;
+}
+</code></pre>
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="2018-10-25T19:33:51.244Z" itemprop="dateModified">Last updated: 2018-10-25</time>

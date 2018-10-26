@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -233,17 +233,44 @@
 <h1 id="Blocks" class="article-heading"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks<a class="article-anchor" href="#Blocks" aria-hidden="true"></a></h1><p>While powerful the Hiccup syntax is about describing static UIs. Blocks enhance it by providing dynamicity based on data content.</p>
 <h2 id="Let-block" class="article-heading"><a href="#Let-block" class="headerlink" title="Let block"></a>Let block<a class="article-anchor" href="#Let-block" aria-hidden="true"></a></h2><p>Let blocks are general blocks allowing views to access data (via lexical scoping).</p>
 <h3 id="Query" class="article-heading"><a href="#Query" class="headerlink" title="Query"></a>Query<a class="article-anchor" href="#Query" aria-hidden="true"></a></h3><p>Let blocks enable access to data via <a href="Query">Queries</a>.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">let</span></span> [value @queries/some-query]</span><br><span class="line">  <span class="comment">;; value is available there</span></span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">(let [value @queries/some-query]
+  ;; value is available there
+  )
+</code></pre>
 <h3 id="Destructuring" class="article-heading"><a href="#Destructuring" class="headerlink" title="Destructuring"></a>Destructuring<a class="article-anchor" href="#Destructuring" aria-hidden="true"></a></h3><p>Let blocks also allow to destructure data (sequences and maps) to access nested information.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(let [&#123;key :key&#125; &#123;:key &quot;value&quot;&#125;]</span><br><span class="line">  ;; key is available there with the value &quot;value&quot;</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
-<h4 id="Sequential-data-structure" class="article-heading"><a href="#Sequential-data-structure" class="headerlink" title="Sequential data structure"></a>Sequential data structure<a class="article-anchor" href="#Sequential-data-structure" aria-hidden="true"></a></h4><p>Extract seq elements by index<br>Elements can be ignored with <code>_</code><br><code>:as symbol</code> denotes the whole sequence</p>
-<h5 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h5><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[a _ c <span class="symbol">:as</span> all] [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line"><span class="comment">;; a = 1</span></span><br><span class="line"><span class="comment">;; c = 3</span></span><br><span class="line"><span class="comment">;; all = [1 2 3 4 5]</span></span><br></pre></td></tr></table></figure>
+<pre><code>(let [{key :key} {:key &quot;value&quot;}]
+  ;; key is available there with the value &quot;value&quot;
+  )
+</code></pre><h4 id="Sequential-data-structure" class="article-heading"><a href="#Sequential-data-structure" class="headerlink" title="Sequential data structure"></a>Sequential data structure<a class="article-anchor" href="#Sequential-data-structure" aria-hidden="true"></a></h4><p>Extract seq elements by index<br>Elements can be ignored with <code>_</code><br><code>:as symbol</code> denotes the whole sequence</p>
+<h5 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h5><pre><code class="clojure">[[a _ c :as all] [1 2 3 4 5]]
+;; a = 1
+;; c = 3
+;; all = [1 2 3 4 5]
+</code></pre>
 <h4 id="Associative-data-structure" class="article-heading"><a href="#Associative-data-structure" class="headerlink" title="Associative data structure"></a>Associative data structure<a class="article-anchor" href="#Associative-data-structure" aria-hidden="true"></a></h4><p>Extract map values by keys <code>{a :a}</code><br>Optional values via <code>[a 5]</code><br>No namespaced keyword support, no short syntax</p>
-<h5 id="Examples-1" class="article-heading"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples-1" aria-hidden="true"></a></h5><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&#123;a <span class="symbol">:a</span> a <span class="symbol">:b</span> [c <span class="number">4</span>] <span class="symbol">:c</span> <span class="symbol">:all</span> all&#125; &#123;<span class="symbol">:a</span> <span class="number">1</span> <span class="symbol">:b</span> <span class="number">2</span> <span class="symbol">:d</span> <span class="number">3</span>&#125;]</span><br><span class="line"><span class="comment">;; a = 1</span></span><br><span class="line"><span class="comment">;; b = 2</span></span><br><span class="line"><span class="comment">;; c = 4</span></span><br><span class="line"><span class="comment">;; all = &#123;:a 1 :b 2 :d 3&#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="Examples-1" class="article-heading"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples-1" aria-hidden="true"></a></h5><pre><code class="clojure">[{a :a a :b [c 4] :c :all all} {:a 1 :b 2 :d 3}]
+;; a = 1
+;; b = 2
+;; c = 4
+;; all = {:a 1 :b 2 :d 3}
+</code></pre>
 <h5 id="Nesting" class="article-heading"><a href="#Nesting" class="headerlink" title="Nesting"></a>Nesting<a class="article-anchor" href="#Nesting" aria-hidden="true"></a></h5><p>Both structure type destrucuring can be combined </p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[&#123;[a1 _ a3] <span class="symbol">:a</span> &#123;d <span class="symbol">:d</span> #&#123;f <span class="number">7</span>&#125; <span class="symbol">:f</span> [[_ g2] <span class="number">8</span>&#125;] <span class="symbol">:b</span> [_ e2] <span class="symbol">:e</span> <span class="symbol">:all</span> all&#125;</span><br><span class="line"> &#123;<span class="symbol">:a</span> [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>] <span class="symbol">:b</span> &#123;<span class="symbol">:d</span> <span class="number">4</span> <span class="symbol">:e</span> [<span class="number">5</span> <span class="number">6</span>] <span class="symbol">:g</span> [<span class="number">9</span> <span class="number">10</span>]&#125;&#125;]</span><br><span class="line"><span class="comment">;; a1 = 1</span></span><br><span class="line"><span class="comment">;; a3 = 3</span></span><br><span class="line"><span class="comment">;; d = 4</span></span><br><span class="line"><span class="comment">;; e2 = 5</span></span><br><span class="line"><span class="comment">;; f = 7</span></span><br><span class="line"><span class="comment">;; g2 = 10</span></span><br><span class="line"><span class="comment">;; all = &#123;:a [1 2 3] :b &#123;:d 4 :e [5 6] :g [9 10]&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">[{[a1 _ a3] :a {d :d #{f 7} :f [[_ g2] 8}] :b [_ e2] :e :all all}
+ {:a [1 2 3] :b {:d 4 :e [5 6] :g [9 10]}}]
+;; a1 = 1
+;; a3 = 3
+;; d = 4
+;; e2 = 5
+;; f = 7
+;; g2 = 10
+;; all = {:a [1 2 3] :b {:d 4 :e [5 6] :g [9 10]}}
+</code></pre>
 <h1 id="If-when-blocks" class="article-heading"><a href="#If-when-blocks" class="headerlink" title="If/when blocks"></a>If/when blocks<a class="article-anchor" href="#If-when-blocks" aria-hidden="true"></a></h1><p>If and when blocks will make their content available only if associated condition holds true.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">when</span></span> condition?</span><br><span class="line">  [text &#123;&#125;</span><br><span class="line">    <span class="string">""</span>])</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">(when condition?
+  [text {}
+    &quot;&quot;])
+</code></pre>
+
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="2018-10-25T19:33:51.248Z" itemprop="dateModified">Last updated: 2018-10-25</time>

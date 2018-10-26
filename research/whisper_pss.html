@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -361,13 +361,52 @@
 <li><a href="https://gist.github.com/zelig/d52dab6a4509125f842bbd0dce1e9440" target="_blank" rel="noopener">initial pss description</a></li>
 <li><a href="https://github.com/nolash/ethereum-samples/tree/master/p2p/devp2p" target="_blank" rel="noopener">go-ethereum p2p samples</a></li>
 </ul>
-<h2 id="Appendix-Examples" class="article-heading"><a href="#Appendix-Examples" class="headerlink" title="Appendix: Examples"></a>Appendix: Examples<a class="article-anchor" href="#Appendix-Examples" aria-hidden="true"></a></h2><h3 id="Whisper-message-propagation" class="article-heading"><a href="#Whisper-message-propagation" class="headerlink" title="Whisper message propagation"></a>Whisper message propagation<a class="article-anchor" href="#Whisper-message-propagation" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">graph nodes &#123;</span><br><span class="line">  00 -- 01; 00 -- 10 ; 10 -- 11; 01 -- 11; </span><br><span class="line">  01 -- 10;</span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">digraph step1 &#123;</span><br><span class="line">  00 -&gt; 01; 00 -&gt; 10;</span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">digraph step2 &#123;</span><br><span class="line">  00; 01 -&gt; 10; 10 -&gt; 11; 01 -&gt; 11; 10 -&gt; 01;</span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Appendix-Examples" class="article-heading"><a href="#Appendix-Examples" class="headerlink" title="Appendix: Examples"></a>Appendix: Examples<a class="article-anchor" href="#Appendix-Examples" aria-hidden="true"></a></h2><h3 id="Whisper-message-propagation" class="article-heading"><a href="#Whisper-message-propagation" class="headerlink" title="Whisper message propagation"></a>Whisper message propagation<a class="article-anchor" href="#Whisper-message-propagation" aria-hidden="true"></a></h3><pre><code class="graphviz">
+graph nodes {
+  00 -- 01; 00 -- 10 ; 10 -- 11; 01 -- 11; 
+  01 -- 10;
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
+<pre><code class="graphviz">
+digraph step1 {
+  00 -&gt; 01; 00 -&gt; 10;
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
+<pre><code class="graphviz">
+digraph step2 {
+  00; 01 -&gt; 10; 10 -&gt; 11; 01 -&gt; 11; 10 -&gt; 01;
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
 <p>Notice how <code>10</code>, <code>01</code> potentially receive message twice (depending on timing) and <code>11</code> is guaranteed to recieve twice (in this setup, due to locally limited knowledge in <code>01</code>, <code>10</code> nodes)</p>
-<h3 id="PSS-message-propagation" class="article-heading"><a href="#PSS-message-propagation" class="headerlink" title="PSS message propagation"></a>PSS message propagation<a class="article-anchor" href="#PSS-message-propagation" aria-hidden="true"></a></h3><p>Example propagation to address <code>1*</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">graph nodes &#123;</span><br><span class="line">  00 -- 01; 00 -- 10 ; 10 -- 11; 01 -- 11; </span><br><span class="line">  01 -- 10;</span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">digraph step1 &#123;</span><br><span class="line">  00 -&gt; 10;</span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">digraph step1 &#123;</span><br><span class="line">  00; 10 -&gt; 11; </span><br><span class="line">  &#123;rank=same; 00 01&#125; &#123;rank=same; 10 11&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PSS-message-propagation" class="article-heading"><a href="#PSS-message-propagation" class="headerlink" title="PSS message propagation"></a>PSS message propagation<a class="article-anchor" href="#PSS-message-propagation" aria-hidden="true"></a></h3><p>Example propagation to address <code>1*</code>:</p>
+<pre><code class="graphviz">
+graph nodes {
+  00 -- 01; 00 -- 10 ; 10 -- 11; 01 -- 11; 
+  01 -- 10;
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
+<pre><code class="graphviz">
+digraph step1 {
+  00 -&gt; 10;
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
+<pre><code class="graphviz">
+digraph step1 {
+  00; 10 -&gt; 11; 
+  {rank=same; 00 01} {rank=same; 10 11}
+}
+
+</code></pre>
 <p>Either of <code>10</code>, <code>11</code> could be recipient, message reaches both!</p>
 
               </div>

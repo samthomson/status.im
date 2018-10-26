@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://dev.status.im/fiddle/index.html</loc>
+    
+    <lastmod>2018-10-26T11:05:22.950Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/contribute/our_principles.html</loc>
+    
+    <lastmod>2018-10-26T11:05:22.950Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/contribute/open_positions.html</loc>
+    
+    <lastmod>2018-10-26T11:05:22.950Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dev.status.im/wip/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.284Z</lastmod>
@@ -9,28 +30,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/research/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/security/sec_threat_modeling.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/tutorials/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/security/sec_week.html</loc>
+    <loc>https://dev.status.im/research/whisper_faqs.html</loc>
     
     <lastmod>2018-10-25T19:33:51.256Z</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/security/index.html</loc>
+    <loc>https://dev.status.im/security/sec_existing_features.html</loc>
     
     <lastmod>2018-10-25T19:33:51.256Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/security/sec_existing_features.html</loc>
+    <loc>https://dev.status.im/security/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.256Z</lastmod>
     
@@ -93,21 +93,35 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/research/whisper_faqs.html</loc>
+    <loc>https://dev.status.im/tutorials/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.256Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/get_desktop/index.html</loc>
+    <loc>https://dev.status.im/security/sec_threat_modeling.html</loc>
     
-    <lastmod>2018-10-25T19:33:51.252Z</lastmod>
+    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/index.html</loc>
+    <loc>https://dev.status.im/research/index.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/security/sec_week.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.256Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/org_sec/org_github_labels.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
     
@@ -121,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/org_sec/org_github_labels.html</loc>
+    <loc>https://dev.status.im/nightly/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
     
@@ -135,27 +149,6 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/guides/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.252Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/nightly/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.252Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/research/dark_routing.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.252Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dev.status.im/get/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
@@ -163,21 +156,28 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/fiddle/fiddle.html</loc>
+    <loc>https://dev.status.im/get_desktop/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/fiddle/intro_fiddle.html</loc>
+    <loc>https://dev.status.im/guides/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/fiddle/index.html</loc>
+    <loc>https://dev.status.im/privacy-policy.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/research/dark_routing.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
     
@@ -198,9 +198,16 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/privacy-policy.html</loc>
+    <loc>https://dev.status.im/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.252Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/docs/tribute_to_talk.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
     
   </url>
   
@@ -212,14 +219,14 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/docs/send_transaction_flow.html</loc>
+    <loc>https://dev.status.im/extensions/principles.html</loc>
     
     <lastmod>2018-10-25T19:33:51.248Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/extensions/principles.html</loc>
+    <loc>https://dev.status.im/extensions/development.html</loc>
     
     <lastmod>2018-10-25T19:33:51.248Z</lastmod>
     
@@ -240,98 +247,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/extensions/development.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dev.status.im/extensions/concept_registry.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/concept_hook.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/concept_query.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/concept_reference.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/concept_anatomy.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/concept_block.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/chat_command.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/docs/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/docs/run_status_node.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/docs/report_a_bug.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/extensions/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/docs/testing.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/docs/tribute_to_talk.html</loc>
     
     <lastmod>2018-10-25T19:33:51.248Z</lastmod>
     
@@ -345,7 +261,63 @@
   </url>
   
   <url>
+    <loc>https://dev.status.im/extensions/concept_reference.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/concept_query.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/concept_hook.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/docs/testing.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dev.status.im/extensions/concept_event.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/docs/index.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/docs/send_transaction_flow.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/index.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/docs/report_a_bug.html</loc>
     
     <lastmod>2018-10-25T19:33:51.248Z</lastmod>
     
@@ -359,7 +331,35 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/developer_tools/assets_guidelines.html</loc>
+    <loc>https://dev.status.im/docs/run_status_node.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/chat_command.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/concept_block.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/extensions/concept_anatomy.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/contribute/applicant_privacy.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -373,6 +373,13 @@
   </url>
   
   <url>
+    <loc>https://dev.status.im/docs/FAQs.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://dev.status.im/docs/embark.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
@@ -380,7 +387,63 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/docs/FAQs.html</loc>
+    <loc>https://dev.status.im/developer_tools/troubleshooting_dapps.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/status_web_api.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/intro_extensions.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/http_debugging.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/index.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/detecting_status.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/assets_guidelines.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/add_your_dapp.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/developer_tools/access_eth_provider.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -408,21 +471,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/contribute/open_positions.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/contribute/our_principles.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/contribute/applicant_privacy.html</loc>
+    <loc>https://dev.status.im/contribute/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -436,63 +485,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/contribute/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dev.status.im/contribute/applying_to_status.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/troubleshooting_dapps.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/status_web_api.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/intro_extensions.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/http_debugging.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/access_eth_provider.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/developer_tools/detecting_status.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -506,21 +499,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/developer_tools/add_your_dapp.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://dev.status.im/build_status/status_go.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/build_status/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -541,14 +520,14 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/build_status/desktop_jenkins.html</loc>
+    <loc>https://dev.status.im/build_status/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://dev.status.im/build_status/desktop_google_breakpad.html</loc>
+    <loc>https://dev.status.im/build_status/desktop_jenkins.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -562,21 +541,7 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/audits/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/app/index.html</loc>
-    
-    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://dev.status.im/analytics/run_it_yourself.html</loc>
+    <loc>https://dev.status.im/build_status/desktop_google_breakpad.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -590,7 +555,14 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/analytics/index.html</loc>
+    <loc>https://dev.status.im/analytics/run_it_yourself.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/audits/index.html</loc>
     
     <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
@@ -611,9 +583,16 @@
   </url>
   
   <url>
-    <loc>https://dev.status.im/analytics/crypto_oss.html</loc>
+    <loc>https://dev.status.im/app/index.html</loc>
     
-    <lastmod>2018-10-25T19:33:51.232Z</lastmod>
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/analytics/index.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.244Z</lastmod>
     
   </url>
   
@@ -626,6 +605,13 @@
   
   <url>
     <loc>https://dev.status.im/analytics/app_downloads.html</loc>
+    
+    <lastmod>2018-10-25T19:33:51.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://dev.status.im/analytics/crypto_oss.html</loc>
     
     <lastmod>2018-10-25T19:33:51.232Z</lastmod>
     

@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -237,20 +237,91 @@
 <li>public-chats</li>
 </ul>
 <p>Here we will demonstrate <code>personal-chats</code>.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;hooks/commands.collectible</span><br><span class="line"> &#123;...</span><br><span class="line">  <span class="symbol">:scope</span> #&#123;<span class="symbol">:personal-chats</span>&#125;&#125; <span class="comment">;; Could be #&#123;:personal-chats :group-chats&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{hooks/commands.collectible
+ {...
+  :scope #{:personal-chats}} ;; Could be #{:personal-chats :group-chats}
+</code></pre>
 <h2 id="Previews" class="article-heading"><a href="#Previews" class="headerlink" title="Previews"></a>Previews<a class="article-anchor" href="#Previews" aria-hidden="true"></a></h2><p><code>Previews</code> are used to display the result of a command execution in a chat. </p>
 <p><code>Short previews</code> will be displayed as last message in the chat item of the Home tab of Status.</p>
 <p>Previews receive data from status encapsulating the parameters provided by the end user and some relevant contextual information.</p>
 <p>Short previews will get injected payload of the following form:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="symbol">:message-id</span> <span class="number">0</span>x..., </span><br><span class="line"> <span class="symbol">:content</span> &#123;<span class="symbol">:command-path</span> [dtwitter #&#123;<span class="symbol">:personal-chats</span>&#125;]</span><br><span class="line">           <span class="symbol">:params</span> &#123;<span class="symbol">:symbol</span> <span class="number">0</span>&#125;&#125;</span><br><span class="line"> <span class="symbol">:show?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:message-type</span> <span class="symbol">:user-message</span></span><br><span class="line"> <span class="symbol">:clock-value</span> <span class="number">154020622416101</span></span><br><span class="line"> <span class="symbol">:from</span> <span class="number">0</span>x...</span><br><span class="line"> <span class="symbol">:chat-id</span> <span class="number">0</span>x...</span><br><span class="line"> <span class="symbol">:content-type</span> command</span><br><span class="line"> <span class="symbol">:appearing?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:timestamp</span> <span class="number">1540206224139</span></span><br><span class="line"> <span class="symbol">:outgoing</span> <span class="literal">true</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{:message-id 0x..., 
+ :content {:command-path [dtwitter #{:personal-chats}]
+           :params {:symbol 0}}
+ :show? true
+ :message-type :user-message
+ :clock-value 154020622416101
+ :from 0x...
+ :chat-id 0x...
+ :content-type command
+ :appearing? true
+ :timestamp 1540206224139
+ :outgoing true}
+</code></pre>
 <p>Previews will get injected payload of the following form:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="symbol">:incoming-group</span> <span class="literal">false</span></span><br><span class="line"> <span class="symbol">:message-id</span> <span class="number">0</span>x..</span><br><span class="line"> <span class="symbol">:last?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:current-public-key</span> <span class="number">0</span>x...</span><br><span class="line"> <span class="symbol">:content</span> &#123;<span class="symbol">:command-path</span> [dtwitter #&#123;<span class="symbol">:personal-chats</span>&#125;]</span><br><span class="line">           <span class="symbol">:params</span> &#123;<span class="symbol">:symbol</span> <span class="number">0</span>&#125;&#125;</span><br><span class="line"> <span class="symbol">:display-photo?</span> <span class="literal">false</span></span><br><span class="line"> <span class="symbol">:last-in-group?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:datemark</span> today</span><br><span class="line"> <span class="symbol">:show?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:message-type</span> <span class="symbol">:user-message</span></span><br><span class="line"> <span class="symbol">:clock-value</span> <span class="number">154020773584601</span></span><br><span class="line"> <span class="symbol">:user-statuses</span> &#123;<span class="number">0</span>x... &#123;<span class="symbol">:chat-id</span> ..., <span class="symbol">:message-id</span> <span class="number">0</span>x..., <span class="symbol">:whisper-identity</span> <span class="number">0</span>x..., <span class="symbol">:status</span> <span class="symbol">:sending</span>&#125;&#125;</span><br><span class="line"> <span class="symbol">:first-in-group?</span> <span class="literal">true</span>,</span><br><span class="line"> <span class="symbol">:from</span> <span class="number">0</span>x...</span><br><span class="line"> <span class="symbol">:timestamp-str</span> <span class="number">1</span>:<span class="number">28</span> PM</span><br><span class="line"> <span class="symbol">:group-chat</span> <span class="literal">false</span></span><br><span class="line"> <span class="symbol">:chat-id</span> <span class="number">0</span>x...</span><br><span class="line"> <span class="symbol">:content-type</span> command</span><br><span class="line"> <span class="symbol">:modal?</span> <span class="literal">false</span></span><br><span class="line"> <span class="symbol">:last-outgoing?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:appearing?</span> <span class="literal">true</span></span><br><span class="line"> <span class="symbol">:timestamp</span> <span class="number">1540207735840</span></span><br><span class="line"> <span class="symbol">:display-username?</span> <span class="literal">false</span></span><br><span class="line"> <span class="symbol">:outgoing</span> <span class="literal">true</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{:incoming-group false
+ :message-id 0x..
+ :last? true
+ :current-public-key 0x...
+ :content {:command-path [dtwitter #{:personal-chats}]
+           :params {:symbol 0}}
+ :display-photo? false
+ :last-in-group? true
+ :datemark today
+ :show? true
+ :message-type :user-message
+ :clock-value 154020773584601
+ :user-statuses {0x... {:chat-id ..., :message-id 0x..., :whisper-identity 0x..., :status :sending}}
+ :first-in-group? true,
+ :from 0x...
+ :timestamp-str 1:28 PM
+ :group-chat false
+ :chat-id 0x...
+ :content-type command
+ :modal? false
+ :last-outgoing? true
+ :appearing? true
+ :timestamp 1540207735840
+ :display-username? false
+ :outgoing true}
+</code></pre>
 <h2 id="Parameters" class="article-heading"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters<a class="article-anchor" href="#Parameters" aria-hidden="true"></a></h2><p>A parameter is identified by its <code>id</code> and must define a <code>type</code> and a <code>placeholder</code> (any string).<br>In this tutorial <code>:text</code> and <code>:number</code> will be used.<br><code>suggestions</code> can be optionally provided and must point to a <code>view</code>. </p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;hooks/commands.collectible</span><br><span class="line"> &#123;...</span><br><span class="line">  <span class="symbol">:parameters</span>    [&#123;<span class="symbol">:id</span>          <span class="symbol">:symbol</span></span><br><span class="line">                   <span class="symbol">:type</span>        <span class="symbol">:text</span></span><br><span class="line">                   <span class="symbol">:placeholder</span> <span class="string">"Parameter"</span></span><br><span class="line">                   <span class="symbol">:suggestions</span> status/asset-selector&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{hooks/commands.collectible
+ {...
+  :parameters    [{:id          :symbol
+                   :type        :text
+                   :placeholder &quot;Parameter&quot;
+                   :suggestions status/asset-selector}]}}
+</code></pre>
 <h2 id="on-send-and-on-receive" class="article-heading"><a href="#on-send-and-on-receive" class="headerlink" title="on-send and on-receive"></a>on-send and on-receive<a class="article-anchor" href="#on-send-and-on-receive" aria-hidden="true"></a></h2><p><code>on-send</code> and <code>on-receive</code> allow to fire events when a command message will respectively be sent or received.</p>
 <p>Both will get injected payload of the following form:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="symbol">:chat-id</span> <span class="number">0</span>x...     </span><br><span class="line"> <span class="symbol">:content-type</span> command</span><br><span class="line"> <span class="symbol">:content</span> &#123;<span class="symbol">:command-path</span> [dtwitter #&#123;<span class="symbol">:personal-chats</span>&#125;]</span><br><span class="line">           <span class="symbol">:params</span> &#123;<span class="symbol">:symbol</span> <span class="number">0</span>&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Chat-command-hello-world" class="article-heading"><a href="#Chat-command-hello-world" class="headerlink" title="Chat command hello world"></a>Chat command hello world<a class="article-anchor" href="#Chat-command-hello-world" aria-hidden="true"></a></h1><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;meta</span><br><span class="line"> &#123;<span class="symbol">:name</span>          <span class="string">"Hello world"</span></span><br><span class="line">  <span class="symbol">:description</span>   <span class="string">""</span></span><br><span class="line">  <span class="symbol">:documentation</span> <span class="string">""</span>&#125;</span><br><span class="line"></span><br><span class="line"> views/preview</span><br><span class="line"> [text <span class="string">"This is a preview"</span>]</span><br><span class="line"></span><br><span class="line"> views/short-preview</span><br><span class="line"> [text <span class="string">"This is a short preview"</span>]</span><br><span class="line"></span><br><span class="line">hooks/commands.collectible</span><br><span class="line">&#123;<span class="symbol">:description</span>   <span class="string">"Hello world command"</span></span><br><span class="line"> <span class="symbol">:scope</span>         #&#123;<span class="symbol">:personal-chats</span>&#125;</span><br><span class="line"> <span class="symbol">:preview</span>       preview</span><br><span class="line"> <span class="symbol">:short-preview</span> short-preview</span><br><span class="line"> <span class="symbol">:on-send</span>       [alert &#123;<span class="symbol">:value</span> <span class="string">"Command executed!"</span>&#125;]</span><br><span class="line"> <span class="symbol">:parameters</span>   </span><br><span class="line"> [&#123;<span class="symbol">:id</span>          <span class="symbol">:symbol</span></span><br><span class="line">   <span class="symbol">:type</span>        <span class="symbol">:text</span></span><br><span class="line">   <span class="symbol">:placeholder</span> <span class="string">"First argument"</span>&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{:chat-id 0x...     
+ :content-type command
+ :content {:command-path [dtwitter #{:personal-chats}]
+           :params {:symbol 0}}}
+</code></pre>
+<h1 id="Chat-command-hello-world" class="article-heading"><a href="#Chat-command-hello-world" class="headerlink" title="Chat command hello world"></a>Chat command hello world<a class="article-anchor" href="#Chat-command-hello-world" aria-hidden="true"></a></h1><pre><code class="clojure">{meta
+ {:name          &quot;Hello world&quot;
+  :description   &quot;&quot;
+  :documentation &quot;&quot;}
+
+ views/preview
+ [text &quot;This is a preview&quot;]
+
+ views/short-preview
+ [text &quot;This is a short preview&quot;]
+
+hooks/commands.collectible
+{:description   &quot;Hello world command&quot;
+ :scope         #{:personal-chats}
+ :preview       preview
+ :short-preview short-preview
+ :on-send       [alert {:value &quot;Command executed!&quot;}]
+ :parameters   
+ [{:id          :symbol
+   :type        :text
+   :placeholder &quot;First argument&quot;}]}}
+</code></pre>
 
               </div>
               <footer class="article-footer">

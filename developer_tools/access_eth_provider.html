@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -229,17 +229,41 @@
 <p><code>import Web3 from &#39;web3&#39;</code></p>
 <h3 id="Create-a-New-Web3-Object" class="article-heading"><a href="#Create-a-New-Web3-Object" class="headerlink" title="Create a New Web3 Object"></a>Create a New Web3 Object<a class="article-anchor" href="#Create-a-New-Web3-Object" aria-hidden="true"></a></h3><p>After importing <code>Web3</code> from the library you’re using, you need to make sure it is instantiated for that page/app:</p>
 <p><code>web3 = new Web3(ethereum)</code></p>
-<h3 id="Request-Full-Access-to-the-Provider" class="article-heading"><a href="#Request-Full-Access-to-the-Provider" class="headerlink" title="Request Full Access to the Provider"></a>Request Full Access to the Provider<a class="article-anchor" href="#Request-Full-Access-to-the-Provider" aria-hidden="true"></a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="comment">// Read-only provider is exposed by default</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">await</span> ethereum.send(<span class="string">'net_version'</span>));</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// Request full provider if needed</span></span><br><span class="line">        <span class="keyword">await</span> ethereum.enable();</span><br><span class="line">        <span class="comment">// Full provider exposed</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="comment">// User denied full provider access</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Request-Full-Access-to-the-Provider" class="article-heading"><a href="#Request-Full-Access-to-the-Provider" class="headerlink" title="Request Full Access to the Provider"></a>Request Full Access to the Provider<a class="article-anchor" href="#Request-Full-Access-to-the-Provider" aria-hidden="true"></a></h3><pre><code class="js">window.addEventListener(&#39;load&#39;, async () =&gt; {
+    // Read-only provider is exposed by default
+    console.log(await ethereum.send(&#39;net_version&#39;));
+    try {
+        // Request full provider if needed
+        await ethereum.enable();
+        // Full provider exposed
+    } catch (error) {
+        // User denied full provider access
+    }
+});
+</code></pre>
 <p>Note the read-only provider in the first line, which is exposed by default. Accessing the user’s address and initiating transactions or signing messages requires the <code>ethereum.enable()</code> call to be accepted by the user.</p>
 <p>Further details around the structure we have all settled on together can be found in <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1102.md" target="_blank" rel="noopener">EIP 1102</a>.</p>
-<h3 id="Setting-the-default-account" class="article-heading"><a href="#Setting-the-default-account" class="headerlink" title="Setting the default account"></a>Setting the default account<a class="article-anchor" href="#Setting-the-default-account" aria-hidden="true"></a></h3><p>web3.js uses web3.eth.defaultAccount for any transaction that does not specify a <code>from</code>. In order to be able to create transactions, you must set a valid address. The following code can only be executed once <code>ethereum.enable();</code> has been executed successfully:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">web3.eth.getAccounts().then(accounts =&gt; &#123;</span><br><span class="line">    web3.eth.defaultAccount = accounts[0];</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="Using-Web3-Rather-Than-the-Provider" class="article-heading"><a href="#Using-Web3-Rather-Than-the-Provider" class="headerlink" title="Using Web3 Rather Than the Provider"></a>Using Web3 Rather Than the Provider<a class="article-anchor" href="#Using-Web3-Rather-Than-the-Provider" aria-hidden="true"></a></h3><p>You can see that the EIP suggests using <code>await ethereum.send(&#39;eth_sendTransaction&#39;, [/* ... */]);</code>, after being granted full access, but we feel this is likely confusing. Most developers already use web3 when sending transactions (of any kind - i.e. it could be <code>web3.eth.defaultBlock</code> or <code>web3.eth.estimateGas</code> etc.).</p>
+<h3 id="Setting-the-default-account" class="article-heading"><a href="#Setting-the-default-account" class="headerlink" title="Setting the default account"></a>Setting the default account<a class="article-anchor" href="#Setting-the-default-account" aria-hidden="true"></a></h3><p>web3.js uses web3.eth.defaultAccount for any transaction that does not specify a <code>from</code>. In order to be able to create transactions, you must set a valid address. The following code can only be executed once <code>ethereum.enable();</code> has been executed successfully:</p>
+<pre><code>web3.eth.getAccounts().then(accounts =&gt; {
+    web3.eth.defaultAccount = accounts[0];
+});
+</code></pre><h3 id="Using-Web3-Rather-Than-the-Provider" class="article-heading"><a href="#Using-Web3-Rather-Than-the-Provider" class="headerlink" title="Using Web3 Rather Than the Provider"></a>Using Web3 Rather Than the Provider<a class="article-anchor" href="#Using-Web3-Rather-Than-the-Provider" aria-hidden="true"></a></h3><p>You can see that the EIP suggests using <code>await ethereum.send(&#39;eth_sendTransaction&#39;, [/* ... */]);</code>, after being granted full access, but we feel this is likely confusing. Most developers already use web3 when sending transactions (of any kind - i.e. it could be <code>web3.eth.defaultBlock</code> or <code>web3.eth.estimateGas</code> etc.).</p>
 <p>This is why we suggest importing web3 from the appropriate library for your Dapp, instantiating it, adding the new provider block above, and then handling transactions through web3 as your normally would before the November 2, 2018 breaking changes.</p>
 <p>This works exactly like it always has:</p>
 <p><code>web3.eth.sendTransaction(transactionObject)</code></p>
 <p>Constructing the transactionObject is, again, heavily dependent on what you’re trying to do, but here is a super simple example of what it might look like if you just plugged the required values straight in:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// using web3.js 1.0.0-beta</span><br><span class="line">web3.eth.sendTransaction(&#123;</span><br><span class="line">    from: web3.eth.defaultAccount,</span><br><span class="line">    to: &apos;0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe&apos;,</span><br><span class="line">    value: &apos;1000000000000000&apos;,</span><br><span class="line">    gas: gasLimit // use web3.eth.estimateGas() to get this amount, and add a little for extra safety.</span><br><span class="line">&#125;).then(receipt =&gt; &#123;</span><br><span class="line">    console.log(receipt.transactionHash); // &quot;0xe7991ac8107a2dd70f996ea0cd867a828b2f228b39436506271d6a53587eff16&quot;</span><br><span class="line">&#125;).catch(function(err)&#123;</span><br><span class="line">    console.error(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<pre><code>// using web3.js 1.0.0-beta
+web3.eth.sendTransaction({
+    from: web3.eth.defaultAccount,
+    to: &#39;0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe&#39;,
+    value: &#39;1000000000000000&#39;,
+    gas: gasLimit // use web3.eth.estimateGas() to get this amount, and add a little for extra safety.
+}).then(receipt =&gt; {
+    console.log(receipt.transactionHash); // &quot;0xe7991ac8107a2dd70f996ea0cd867a828b2f228b39436506271d6a53587eff16&quot;
+}).catch(function(err){
+    console.error(err);
+});
+</code></pre>
               </div>
               <footer class="article-footer">
                 <time class="article-footer-updated" datetime="2018-10-25T19:33:51.244Z" itemprop="dateModified">Last updated: 2018-10-25</time>

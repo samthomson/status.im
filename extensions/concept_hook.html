@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -224,7 +224,8 @@
               <div class="article-content" itemprop="articleBody">
                 <h1 id="Extensions-Hook" class="article-heading"><a href="#Extensions-Hook" class="headerlink" title="Extensions Hook"></a>Extensions Hook<a class="article-anchor" href="#Extensions-Hook" aria-hidden="true"></a></h1><p>Hook is the mechanism allowing a specific host to define what (and how) can be extended.</p>
 <p>Available hooks are defined as part of capacities by maps detailing properties and their associated type. They leverage <a href="Reference">references</a> to use various extensions elements.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="symbol">:capacities</span> &#123;hooks/main.my-hook &#123;<span class="symbol">:properties</span> &#123;<span class="symbol">:view</span> <span class="symbol">:view</span> <span class="symbol">:name</span> <span class="symbol">:string</span>&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{:capacities {hooks/main.my-hook {:properties {:view :view :name :string}}}}
+</code></pre>
 <p>Properties are defined as map of property name (<code>keyword</code>) / property types.</p>
 <p>Type can be:</p>
 <ul>
@@ -236,7 +237,18 @@
 </ul>
 <p>Extensions can then specify hooks that will match associated host capacities.<br>Hooks implemented by extensions must be qualified with an extra id. This id will be globally unique across all extensions per hook.<br>e.g. an extension implementing <code>hooks/main</code> could define a hook with id <code>hooks/main.demo</code>.</p>
 <p>A hook is defined by a map that consists of a number of pairs specific to each extension type. As shown below, the <code>hooks/main.demo</code> hook requires two additional keys: <code>name</code> and <code>view</code>.</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;meta</span><br><span class="line"> &#123;<span class="symbol">:name</span> <span class="string">""</span></span><br><span class="line">  ...&#125;</span><br><span class="line"> </span><br><span class="line"> views/main</span><br><span class="line"> [text &#123;&#125;</span><br><span class="line">  <span class="string">""</span>]</span><br><span class="line"></span><br><span class="line"> hooks/main.demo</span><br><span class="line"> &#123;<span class="symbol">:view</span> @views/main</span><br><span class="line">  <span class="symbol">:name</span> <span class="string">"test"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">{meta
+ {:name &quot;&quot;
+  ...}
+
+ views/main
+ [text {}
+  &quot;&quot;]
+
+ hooks/main.demo
+ {:view @views/main
+  :name &quot;test&quot;}}
+</code></pre>
 <p>Once a host has loaded a valid extension with matching hooks, it can query the resulting map.</p>
 <h2 id="References" class="article-heading"><a href="#References" class="headerlink" title="References"></a>References<a class="article-anchor" href="#References" aria-hidden="true"></a></h2><h3 id="Views" class="article-heading"><a href="#Views" class="headerlink" title="Views"></a>Views<a class="article-anchor" href="#Views" aria-hidden="true"></a></h3><p>Views references are resolved as a function of one argument that returns hiccup data.<br>The argument must be a map of key/value pairs. This map is used as value for <code>properties</code> reference available in <code>let</code> blocks.</p>
 

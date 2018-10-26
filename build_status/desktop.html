@@ -150,10 +150,10 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Incubate</h4>
-                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                            <h4>Embark</h4>
+                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
                         </div>
-                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
+                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -168,23 +168,23 @@
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-content">
-                            <h4>Embark</h4>
-                            <p class="secondary-text">Embark is a simple and easy to use development framework that enables you to build and deploy your own decentralized applications smoothly.</p>
-                        </div>
-                        <div class="card-community-more__link"><a href="https://embark.status.im/" class="link-arrow">Learn More</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="separator"></div>
-            <h5>Use and Learn</h5>
-            <div class="cards cards-community-more cards--three cards--three--even">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-content">
                             <h4>Status Studio</h4>
                             <p class="secondary-text">Studio is an integrated developer environment and educational platform designed to be a one-stop-shop for ÐApp development.</p>
                         </div>
                         <div class="card-community-more__link"><a href="https://studio.status.im" class="link-arrow">Learn More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+            <h5>Tools for Everyone</h5>
+            <div class="cards cards-community-more cards--three cards--three--even">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-content">
+                            <h4>Incubate</h4>
+                            <p class="secondary-text">Incubate supports open source, early stage startups with funding, technical mentorship, legal and regulatory compliance and much more.</p>
+                        </div>
+                        <div class="card-community-more__link"><a href="https://incubate.status.im/" class="link-arrow">Learn More</a></div>
                     </div>
                 </div>
                 <div class="card">
@@ -250,28 +250,51 @@
 <li>If npm hangs at some step, check the version. If it’s 5.6.0 or higher, try downgrading to 5.5.1 via <code>npm install -g npm@5.5.1</code></li>
 </ul>
 <h1 id="Building-a-release-package" class="article-heading"><a href="#Building-a-release-package" class="headerlink" title="Building a release package"></a>Building a release package<a class="article-anchor" href="#Building-a-release-package" aria-hidden="true"></a></h1><p>Run the following commands to build a Desktop package for the host environment (Linux or Mac OS):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/status-im/status-react.git</span><br><span class="line"><span class="built_in">cd</span> status-react</span><br><span class="line">make setup</span><br><span class="line">make prepare-desktop</span><br><span class="line">make release-desktop</span><br></pre></td></tr></table></figure>
-<h1 id="Development-environment-setup" class="article-heading"><a href="#Development-environment-setup" class="headerlink" title="Development environment setup"></a>Development environment setup<a class="article-anchor" href="#Development-environment-setup" aria-hidden="true"></a></h1><h2 id="To-install-react-native-cli-with-desktop-commands-support" class="article-heading"><a href="#To-install-react-native-cli-with-desktop-commands-support" class="headerlink" title="To install react-native-cli with desktop commands support"></a>To install react-native-cli with desktop commands support<a class="article-anchor" href="#To-install-react-native-cli-with-desktop-commands-support" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/status-im/react-native-desktop.git</span><br><span class="line"><span class="built_in">cd</span> react-native-desktop/react-native-cli</span><br><span class="line">npm update</span><br><span class="line">npm install -g</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">git clone https://github.com/status-im/status-react.git
+cd status-react
+make setup
+make prepare-desktop
+make release-desktop
+</code></pre>
+<h1 id="Development-environment-setup" class="article-heading"><a href="#Development-environment-setup" class="headerlink" title="Development environment setup"></a>Development environment setup<a class="article-anchor" href="#Development-environment-setup" aria-hidden="true"></a></h1><h2 id="To-install-react-native-cli-with-desktop-commands-support" class="article-heading"><a href="#To-install-react-native-cli-with-desktop-commands-support" class="headerlink" title="To install react-native-cli with desktop commands support"></a>To install react-native-cli with desktop commands support<a class="article-anchor" href="#To-install-react-native-cli-with-desktop-commands-support" aria-hidden="true"></a></h2><pre><code class="bash">git clone https://github.com/status-im/react-native-desktop.git
+cd react-native-desktop/react-native-cli
+npm update
+npm install -g
+</code></pre>
 <h2 id="To-setup-dev-builds-of-status-react-for-Desktop" class="article-heading"><a href="#To-setup-dev-builds-of-status-react-for-Desktop" class="headerlink" title="To setup dev builds of status-react for Desktop"></a>To setup dev builds of status-react for Desktop<a class="article-anchor" href="#To-setup-dev-builds-of-status-react-for-Desktop" aria-hidden="true"></a></h2><ol>
-<li><p>Run the following commands:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/status-im/status-react.git</span><br><span class="line"><span class="built_in">cd</span> status-react</span><br><span class="line">make prepare-desktop</span><br></pre></td></tr></table></figure>
+<li>Run the following commands:<pre><code class="bash"> git clone https://github.com/status-im/status-react.git
+ cd status-react
+ make prepare-desktop
+</code></pre>
 </li>
-<li><p>In separate terminal tab: <code>npm start</code> (note: it starts react-native packager )</p>
-</li>
+<li>In separate terminal tab: <code>npm start</code> (note: it starts react-native packager )</li>
 <li>In separate terminal tab: <code>node ./ubuntu-server.js</code></li>
 <li>In separate terminal tab: <code>make watch-desktop</code> (note: wait until sources are compiled)</li>
 <li>In separate terminal tab: <code>react-native run-desktop</code></li>
 </ol>
 <h3 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h3><p>in order to run both release and dev versions of Status Desktop, please specify a value for <code>REACT_SERVER_PORT</code> environment variable that will be different from default 5000. E.g.:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> REACT_SERVER_PORT=5001</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">export REACT_SERVER_PORT=5001
+</code></pre>
 <p>for complete cleanup of generated files and Realm data, issue:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clean -fdx</span><br><span class="line">rm -rf desktop/modules</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">git clean -fdx
+rm -rf desktop/modules
+</code></pre>
 <h2 id="Clean-up-data" class="article-heading"><a href="#Clean-up-data" class="headerlink" title="Clean up data"></a>Clean up data<a class="article-anchor" href="#Clean-up-data" aria-hidden="true"></a></h2><p>To completely clean up data from previous development sessions, such as accounts, you need to do the following:</p>
-<h3 id="On-Linux" class="article-heading"><a href="#On-Linux" class="headerlink" title="On Linux"></a>On Linux<a class="article-anchor" href="#On-Linux" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># First kill the `ubuntu-server` process because it has a cache of realm db</span></span><br><span class="line">killall ubuntu-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># Then remove data and cache folders</span></span><br><span class="line">rm -rf ~/.<span class="built_in">local</span>/share/Status \</span><br><span class="line">       ~/.cache/Status \</span><br><span class="line">       <span class="variable">$STATUS_REACT_HOME</span>/status-react/default.realm*</span><br></pre></td></tr></table></figure>
+<h3 id="On-Linux" class="article-heading"><a href="#On-Linux" class="headerlink" title="On Linux"></a>On Linux<a class="article-anchor" href="#On-Linux" aria-hidden="true"></a></h3><pre><code class="bash"># First kill the `ubuntu-server` process because it has a cache of realm db
+killall ubuntu-server
+
+# Then remove data and cache folders
+rm -rf ~/.local/share/Status \
+       ~/.cache/Status \
+       $STATUS_REACT_HOME/status-react/default.realm*
+</code></pre>
 <h3 id="On-a-Mac" class="article-heading"><a href="#On-a-Mac" class="headerlink" title="On a Mac"></a>On a Mac<a class="article-anchor" href="#On-a-Mac" aria-hidden="true"></a></h3><p>Go to <code>~/Library/Application Support/</code> and delete any Status directories. Delete the app in <code>/Application</code>. Then reinstall.</p>
 <h2 id="Editor-setup" class="article-heading"><a href="#Editor-setup" class="headerlink" title="Editor setup"></a>Editor setup<a class="article-anchor" href="#Editor-setup" aria-hidden="true"></a></h2><p>Running <code>make watch-desktop</code> will run a REPL on port 7888 by default. Some additional steps might be needed to connect to it.</p>
 <h3 id="emacs-cider" class="article-heading"><a href="#emacs-cider" class="headerlink" title="emacs-cider"></a>emacs-cider<a class="article-anchor" href="#emacs-cider" aria-hidden="true"></a></h3><p>In order to get REPL working, put the following config in <code>.dir-locals.el</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">((nil . ((cider-cljs-repl-types . ((figwheel-repl &quot;(do (require &apos;figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))&quot;</span><br><span class="line">                                                  cider-check-figwheel-requirements)))</span><br><span class="line">         (cider-default-cljs-repl . figwheel-repl))))</span><br></pre></td></tr></table></figure>
+<pre><code class="elisp">((nil . ((cider-cljs-repl-types . ((figwheel-repl &quot;(do (require &#39;figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))&quot;
+                                                  cider-check-figwheel-requirements)))
+         (cider-default-cljs-repl . figwheel-repl))))
+</code></pre>
 <p>Then connect to the repl with <code>cider-connect-cljs</code> (default is localhost on port 7888)</p>
 <h3 id="vim-fireplace" class="article-heading"><a href="#vim-fireplace" class="headerlink" title="vim-fireplace"></a>vim-fireplace<a class="article-anchor" href="#vim-fireplace" aria-hidden="true"></a></h3><p>For some reason there is no <code>.nrepl-port</code> file in project root, so <code>vim-fireplace</code> will not be able to connect automatically. You can either:</p>
 <ul>
@@ -279,7 +302,8 @@
 <li>create <code>.nrepl-port</code> file manually and add a single line containing <code>7888</code> (or whatever port REPL is running on)</li>
 </ul>
 <p>After Figwheel has connected to the app, run the following command inside Vim, and you should be all set:</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">:Piggieback</span> (<span class="name">figwheel-sidecar.repl-api/repl-env</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="clojure">:Piggieback (figwheel-sidecar.repl-api/repl-env)
+</code></pre>
 
               </div>
               <footer class="article-footer">
