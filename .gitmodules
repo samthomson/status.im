@@ -1,0 +1,3 @@
+[submodule "themes/navy/layout/partial/mock-status-menu"]
+	path = themes/navy/layout/partial/mock-status-menu
+	url = git@github.com:samthomson/mock-status-menu.git

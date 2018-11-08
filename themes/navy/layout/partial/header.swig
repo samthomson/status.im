@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header-left">
         <a class="logo" href="/"></a>
-        <b>missing nav now</b>
+        {{ partial('mock-status-menu/partials/header-nav') }}
     </div>
     <div class="header-right">
         <a href="/get/" class="button">Join Status Chat</a>
