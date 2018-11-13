@@ -10,7 +10,7 @@
     {% if page.source == 'index.md' %}
       {{ partial('partial/footer-home') }}
     {% else %}
-      {{ partial('partial/footer') }}
+      {{ partial('partial/mock-status-menu/partials/footer') }}
     {% endif %}
   </div>
   {{ partial('partial/after_footer') }}
